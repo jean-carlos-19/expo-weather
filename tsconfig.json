@@ -1,6 +1,13 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "rootDir": ".",
+    "paths": {
+      "controllers":["./src/controllers"],
+      "models":["./src/models"],
+      "services":["./src/services"],
+      "views":["./src/views"],
+    },
     "strict": true
   }
 }
