@@ -8,11 +8,11 @@ module.exports = function(api) {
         {
           'root':["."],
           'alias':{
-            "controllers":"./src/controllers",
-            "models":"./src/models",
-            "services":"./src/services",
-            "views":"./src/views",
-            "global/styles":"./global/styles"
+            "@/controllers":"./src/controllers",
+            "@/models":"./src/models",
+            "@/services":"./src/services",
+            "@/views":"./src/views",
+            "@/global/theme":"./global/theme"
           }
         }
       ],
