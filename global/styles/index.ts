@@ -1,0 +1,1 @@
+export {StyledImage,StyledView} from "./StyleTailwin";
