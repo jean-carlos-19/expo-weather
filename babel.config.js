@@ -12,6 +12,7 @@ module.exports = function(api) {
             "models":"./src/models",
             "services":"./src/services",
             "views":"./src/views",
+            "global/styles":"./global/styles"
           }
         }
       ],
