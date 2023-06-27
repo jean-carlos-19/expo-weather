@@ -15,7 +15,7 @@ const Photo = (props:photo_props) => {
             onLoadEnd={()=> set_state(false)}
         >
             {state ? (
-                  <Progress.CircleSnail thickness={10} size={140} color={"#0bb3b2"} />
+                  <Progress.CircleSnail thickness={10} size={70} color={"#0bb3b2"} />
             ):(null)}
         </ImageBackground>
     )
