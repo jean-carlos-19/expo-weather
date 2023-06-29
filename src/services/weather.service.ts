@@ -7,13 +7,13 @@ import {REACT_API_SEARCH_WEATHER, REACT_API_FORECAST_WEATHER} from '@env'
 class Weather_Service implements Weather_Controller {
     forecast = async (city: string,days:number): Promise<AxiosResponse<any, any>> => {
         return await this.http.get(
-            `${REACT_API_FORECAST_WEATHER}&q=${city}&days=${days}`,
+            `https://api.weatherapi.com/v1/forecast.json?key=a44338e37c654435aeb163440232606&q=${city}&days=${days}`,
             this.http.header()
         )
     }
     search = async(city: string): Promise<AxiosResponse<Search_Dto[]>> =>{
         return await this.http.get(
-            `${REACT_API_SEARCH_WEATHER}&q=${city}`,
+            `https://api.weatherapi.com/v1/search.json?key=a44338e37c654435aeb163440232606&q=${city}`,
             this.http.header()
         )
     }

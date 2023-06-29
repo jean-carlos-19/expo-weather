@@ -1,9 +1,9 @@
 import { weatherImages } from "@/global/img";
 import { theme } from "@/global/theme";
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 import { CalendarDaysIcon } from "react-native-heroicons/outline";
-import {Photo} from '@/global/atomic/element'
+import { Photo } from '@/global/atomic/element'
 
 interface forecast_props {
   data: {
@@ -18,9 +18,10 @@ interface forecast_props {
   }
 }
 const Forecast = (props: forecast_props) => {
-  
+
   const { data } = props;
   const { country, name, temp_c, text, icon, wind_kph, humidity, forecastday } = data;
+  const [img, set_img] = useState("other")
   return (
     <View className="mx-4 flex justify-around flex-1 mb-2">
       {/* Location */}
@@ -32,12 +33,15 @@ const Forecast = (props: forecast_props) => {
       </Text>
       {/* weather image */}
       <View className="flex-row justify-center">
-        <Photo url={"https://"+icon} className="h-52 w-52" />
+        <Image
+          className="h-52 w-52"
+          source={weatherImages[img]}
+        />
       </View>
       {/* degree celcius */}
       <View className="space-y-2">
         <Text className="text-center font-bold text-white text-6xl ml-5">
-          {temp_c}&#176; 
+          {temp_c}&#176;
         </Text>
         <Text className="text-center font-bold text-white text-xl tracking-widest">
           {text}
@@ -82,7 +86,7 @@ const Forecast = (props: forecast_props) => {
             forecastday.map((item, i) => {
 
               let date = new Date(item.date)
-              let day_name = date.toLocaleDateString('en-US',{weekday:"long"});
+              let day_name = date.toLocaleDateString('en-US', { weekday: "long" });
               day_name = day_name.split(",")[0]
               return (
                 <View
@@ -90,7 +94,12 @@ const Forecast = (props: forecast_props) => {
                   className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
                   style={{ backgroundColor: theme.bg_white(0.15) }}
                 >
-                  <Photo url={"https://"+item.day.condition.icon} className="h-11 w-11" />
+                  {/* <Photo url={"https://" + item.day.condition.icon} className="h-11 w-11" /> */}
+                  <Image
+                    className="h-11 w-11"
+                    source={weatherImages[item.day.condition.text]}
+                  />
+                  {console.log(item.day.condition.text)}
                   <Text className="text-white"> {day_name} </Text>
                   <Text className="text-white text-xl font-semibold">{item.day.avgtemp_c} &#176;</Text>
                 </View>
