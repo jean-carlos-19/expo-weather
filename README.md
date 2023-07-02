@@ -30,6 +30,7 @@
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [Expo](https://docs.expo.dev/)
+- [Tailwind](https://www.nativewind.dev/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Yup](https://github.com/jquense/yup)
 - [Formik](https://formik.org/)
