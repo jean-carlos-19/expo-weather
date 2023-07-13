@@ -99,7 +99,6 @@ const Forecast = (props: forecast_props) => {
                     className="h-11 w-11"
                     source={weatherImages[item.day.condition.text]}
                   />
-                  {console.log(item.day.condition.text)}
                   <Text className="text-white"> {day_name} </Text>
                   <Text className="text-white text-xl font-semibold">{item.day.avgtemp_c} &#176;</Text>
                 </View>
