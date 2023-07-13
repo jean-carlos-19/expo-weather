@@ -15,7 +15,10 @@ const Home = () => {
   const {weather,hand_submit,forecast_weather} = useForecastWeather(set_loading,toogle_search);
   const { location,hand_location,handle_search_weather } = useSearchWeather(set_loading,forecast_weather,toogle_search);
   return (
-    <View className="flex-1 relative">
+    <View 
+      className="flex-1 relative"
+      style={{height:height}}
+      >
       <StatusBar style="light" />
       <ImageBackground
         style={{ height: height, paddingTop: Constants.statusBarHeight }}

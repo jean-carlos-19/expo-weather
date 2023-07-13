@@ -2,18 +2,18 @@ import {Search_Dto} from '@/models'
 import {Weather_Controller} from '@/controllers'
 import { AxiosResponse } from 'axios';
 import {Http} from './http/http'
-import {REACT_API_SEARCH_WEATHER, REACT_API_FORECAST_WEATHER} from '@env'
+import {REACT_URL_WEATHER_FORECAST, REACT_URL_WEATHER_SEARCH} from '@env'
 
 class Weather_Service implements Weather_Controller {
     forecast = async (city: string,days:number): Promise<AxiosResponse<any, any>> => {
         return await this.http.get(
-            `https://api.weatherapi.com/v1/forecast.json?key=a44338e37c654435aeb163440232606&q=${city}&days=${days}`,
+            `${REACT_URL_WEATHER_FORECAST}&q=${city}&days=${days}`,
             this.http.header()
         )
     }
     search = async(city: string): Promise<AxiosResponse<Search_Dto[]>> =>{
         return await this.http.get(
-            `https://api.weatherapi.com/v1/search.json?key=a44338e37c654435aeb163440232606&q=${city}`,
+            `${REACT_URL_WEATHER_SEARCH}&q=${city}`,
             this.http.header()
         )
     }
