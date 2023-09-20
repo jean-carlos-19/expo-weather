@@ -1,1 +1,1 @@
-export {Weather_Service} from "./weather.service";
+export { Weather_Service } from './weather.service';

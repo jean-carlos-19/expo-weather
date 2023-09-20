@@ -1,1 +1,1 @@
-export type {Weather_Controller} from "./weather.controller";
+export type { Weather_Controller } from './weather.controller';
